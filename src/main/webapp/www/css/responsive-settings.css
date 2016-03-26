@@ -1,0 +1,14 @@
+
+@media (max-width: 800px) {
+    #map-container {
+        display: none;
+    }
+    #mappage_search {
+        display: none;
+    }
+
+    #list-container {
+        width: 100%;
+    }
+
+}

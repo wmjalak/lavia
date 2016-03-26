@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>La Via!</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="robots" content="noindex">
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/custom-theme.css" />
+        <link rel="stylesheet" href="css/jquery.mobile.icons.min.css" /> 
+        <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css" />         
+
+        <link rel="stylesheet" href="css/jquery.mobile.datepicker.css"/>
+        <link rel="stylesheet" href="css/datepicker.css"/>
+
+        <link rel="stylesheet" href="css/styles.css"/>
+        
+        <link rel="stylesheet" href="css/responsive-settings.css" />
+
+<!--
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
+-->
+        <script src="https://maps.google.com/maps/api/js?sensor=false&libraries=places"></script>
+        <script src="js/vendor/pouchdb.min.js"></script>
+        <script src="js/vendor/pouchdb.authentication.min.js"></script>
+        <!--
+        <script src="js/vendor/backbone-pouch.js"></script>
+        -->
+        <script data-main="js/application" src="js/vendor/require.js"></script>
+    </head>
+
+    <body>
+
+        <div data-role="page" id="loginpage" data-theme="a" class="loginpage-background">
+            <div data-role="header">
+              <h1 id="loginpage_headertitle"></h1>
+            </div>
+            <div id="loginview_content" data-role="content"></div>
+            <div data-role="footer" data-position="fixed" data-tap-toggle="false"><h4></h4></div>
+        </div>
+
+
+        <div data-role="page" id="mappage" data-theme="a">
+            <div data-role="header" data-position="fixed" data-tap-toggle="false">
+              <a id="mappage_search" href="#" class="ui-btn-left ui-btn ui-btn-b ui-corner-all ui-btn-icon-left ui-icon-search ui-btn-icon-notext ui-alt-icon"></a>
+              <h1 id="mappage_headertitle"></h1>
+              <a id="mappage_options" href="#" class="ui-btn-right ui-btn ui-btn-b ui-corner-all ui-btn-icon-right ui-icon-bars ui-btn-icon-notext ui-alt-icon"></a>
+            </div>
+            <div id="mappage_content" data-role="content">
+              <div class="ui-grid-a">
+                  <div class="ui-block-a" id="list-container"></div>
+                  <div class="ui-block-b" id="map-container"></div>
+              </div>
+
+            </div>
+            <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+              <div data-role="navbar" data-theme="a">
+              <ul>
+                  <li><a href="#map" data-icon="map" data-iconpos="notext" class="ui-btn-active ui-state-persist"></a></li>
+                  <li><a href="#dayplan" data-icon="calendar" data-iconpos="notext" class="ui-alt-icon"></a></li>
+              </ul>
+              </div><!-- /navbar -->
+            </div>
+
+            <div data-role="panel" data-position="right" data-position-fixed="true" data-display="overlay" data-theme="a" id="mappage_options_panel"></div>
+
+        </div>
+
+        <div data-role="page" id="dayplanpage" data-theme="a">
+            <div data-role="header">
+            <!--
+              <a href="#back" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-icon-carat-l ui-nodisc-icon ui-alt-icon ui-btn-icon-notext">Takaisin</a>
+              -->
+              <h1 id="dayplanpage_headertitle"></h1>
+            </div>
+            <div id="dayplanpage_content" data-role="content">
+<!--
+              <div id="upperview"></div>
+              <div id="lowerview"></div>
+-->
+            </div>
+            <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+              <div data-role="navbar" data-theme="a">
+              <ul>
+                  <li><a href="#map" data-icon="map" data-iconpos="notext" class="ui-alt-icon"></a></li>
+                  <li><a href="#dayplan" data-icon="calendar" data-iconpos="notext" class="ui-btn-active ui-state-persist ui-alt-icon"></a></li>
+              </ul>
+              </div><!-- /navbar -->
+
+            </div>
+        </div>
+
+        <div data-role="page" id="itempage" data-theme="a" class="custom-background">
+            <div data-role="header">
+              <a href="#back" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-carat-l ui-nodisc-icon ui-alt-icon">Takaisin</a>
+              <h1 id="itemview_headertitle"></h1>
+            </div>
+            <div id="itemview_content" data-role="content">
+
+              <div id="editview"></div>
+
+            </div>
+            
+            <div data-role="footer" data-position="fixed" data-tap-toggle="false"><h4></h4>
+            </div>
+            
+        </div>
+
+        
+    </body>
+
+</html>
+

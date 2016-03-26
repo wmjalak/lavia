@@ -1,0 +1,155 @@
+<% var edit = (show == "edit"); %>
+
+<div class="ui-bar ui-bar-a small-text<% if (!edit) { %> selectionlayer<% } %>">
+
+  <h3 style="font-size:1.5em;"><%- model.get('title') %></h3>
+  <% if (!edit) { %>    
+    <a id="<%= model.id %>" href="#" style="float: right;" class="ui-btn ui-btn-inline ui-mini ui-small-edit-btn ui-corner-all editPlaceButton"><%- Util.i18n('edit') %></a>
+  <% } %>
+
+</div>
+
+<div class="ui-body ui-body-a small-text">
+    <input id="id" value="<%= model.id %>" type="hidden"> 
+
+
+
+      <% if (edit) { %>
+
+        <div class="ui-grid-a">
+          <div class="ui-block-a">
+            <% if (edit) { %>
+              <label for="text-name"><%- Util.i18n('place_name') %></label>
+              <input name="text-name" id="name" value="<%- model.get('title') %>" type="text">
+            <% } %>
+          </div>
+
+          <div class="ui-block-b">
+            <label for="text-address"><%- Util.i18n('place_address') %></label>
+            <% if (edit) { %>
+              <input name="text-address" id="address" value="<%- model.get('streetAddress') %>" type="text">
+            <% } else { %>
+              <strong><span><%- Util.dash(model.get('streetAddress')) %></span></strong>
+            <% } %>
+          </div>
+        </div>
+
+      <% } %>
+
+
+
+
+
+
+      <label for="textarea"><%- Util.i18n('place_description') %></label>
+      <% if (edit) { %>
+        <textarea name="textarea" id="description"><%- model.get('description') %></textarea>
+      <% } else { %>
+        <strong><span><%- Util.dash(model.get('description')) %></span></strong>
+      <% } %>
+
+    <div class="moreinfo">
+
+      <% if (!edit) { %>
+        <label for="text-address"><%- Util.i18n('place_address') %></label>
+        <strong><span><%- Util.dash(model.get('streetAddress')) %></span></strong>
+      <% } %>
+
+      <label for="coordinates"><%- Util.i18n('coordinates') %></label>
+      <fieldset class="ui-grid-a">
+          <div class="ui-block-a">
+          <% if (edit) { %>
+            <input id="lat" value="<%- model.get('lat') %>" type="text">
+          <% } else { %>
+            <strong><span><%- Util.dash(model.get('lat')) %></span></strong>
+          <% } %>
+          </div>
+          <div class="ui-block-b">
+          <% if (edit) { %>
+            <input id="lng" value="<%- model.get('lng') %>" type="text">
+          <% } else { %>
+            <strong><span><%- Util.dash(model.get('lng')) %></span></strong>
+          <% } %>
+          </div>
+      </fieldset>
+
+
+      <div class="ui-grid-a">
+    
+        <% var start_time = Util.formatDate(model.get('startdate'), "LT"); %>
+        <% var end_time = Util.formatDate(model.get('enddate'), "LT"); %>
+
+        <div class="ui-block-a time-selection">
+
+          <label for="startdate"><%- Util.i18n('starttime') %></label>
+          <% if (edit) { %>
+            <input class="date-input-css" class="datepick" id="startdate" value="<%- Util.formatDate(model.get('startdate'), "L") %>" type="text" readonly="true">
+
+            <select name="starttime" id="starttime" data-icon="false" data-shadow="false">
+                <option value="0"><%- Util.i18n('not_set') %></option>
+                <% _.each(hours, function(hour, index) {  %>
+                  <option 
+                  <% if (start_time == hour) { %> selected="selected" <% } %>
+                  value="<%- index %>"><%- hour %></option>
+                <% }); %>
+            </select>
+
+          <% } else { %>
+            <strong><span><%- Util.dash(Util.formatDate(model.get('startdate'), "L LT")) %></span></strong>
+          <% } %>
+        </div>
+
+        <div class="ui-block-b time-selection">
+
+          <label for="enddate"><%- Util.i18n('endtime') %></label>
+          <% if (edit) { %>
+            <input class="date-input-css" class="datepick" id="enddate" value="<%- Util.formatDate(model.get('enddate'), "L") %>" type="text" readonly="true">
+
+            <select name="endtime" id="endtime" data-icon="false" data-shadow="false">
+                <option value="0"><%- Util.i18n('not_set') %></option>
+                <% _.each(hours, function(hour, index) {  %>
+                  <option 
+                  <% if (end_time == hour) { %> selected="selected" <% } %>
+                  value="<%- index %>"><%- hour %></option>
+                <% }); %>
+            </select>
+
+          <% } else { %>
+            <strong><span><%- Util.dash(Util.formatDate(model.get('enddate'), "L LT")) %></span></strong>
+          <% } %>
+
+
+        </div>
+
+      </div>
+
+
+      <label for="place_type"><%- Util.i18n('place_type') %></label>
+      <% if (edit) { %>
+
+        <select name="place_type" id="type" data-mini="true" data-icon="false">
+            <% _.each(model.types(), function(type) {  %>
+              <option 
+              <% if (model.get('type') == type) { %> selected="selected" <% } %>
+              value="<%- type %>"><%- Util.i18n('place_type_'+type) %></option>
+            <% }); %>
+        </select>
+
+      <% } else { %>
+        <strong><span><%- Util.dash(Util.i18n('place_type_'+model.get('type'))) %></span></strong>
+      <% } %>
+
+
+
+      <% if (edit) { %>
+        <p>
+          <a href="#" id='poi_saveBtn' class="ui-btn ui-btn-a ui-mini ui-corner-all ui-shadow ui-active-btn"><%- Util.i18n('save') %></a>
+          <% if (!model.isNew()) { %>
+            <a href="#" id='poi_deleteBtn' class="ui-btn ui-btn-a ui-mini ui-corner-all ui-shadow ui-small-delete-btn"><%- Util.i18n('delete') %></a>
+          <% } %>
+        </p>
+      <% } %>
+
+    </div>
+
+</div>

@@ -1,0 +1,100 @@
+{
+"items": [
+{
+  "id": 0,
+  "title": "99-4326-C",
+  "status": "SENT",
+  "created": "2014-10-08T07:00:00+02:00",
+  "permitCode": "99-4326-C",
+  "streetAddress": "Postintaival 3",
+  "locationProperty": "091-436-0013-0000 024",
+  "locationArea": "Vähä Huopalahti",
+  "lat":"60.225462",
+  "lng":"24.863650"
+},
+{
+  "id": 1,
+  "title": "Item 2",
+  "status": "SENT",
+  "created": "2014-11-09T07:00:00+02:00",
+  "permitCode": "99-1234-B",
+  "streetAddress": "Postintaival 3",
+  "locationProperty": "091-436-0013-0000 024",
+  "locationArea": "Vähä Huopalahti",
+  "lat":"60.226462",
+  "lng":"24.862650"
+},
+{
+  "id": 100,
+  "title": "Item 3",
+  "status": "SENT",
+  "created": "2014-10-01T07:00:00+02:00",
+  "permitCode": "91-4563-D",
+  "streetAddress": "Postintaival 3",
+  "locationProperty": "091-436-0013-0000 024",
+  "locationArea": "Vähä Huopalahti",
+  "lat":"60.226362",
+  "lng":"24.862350"
+},
+{
+  "id": 101,
+  "title": "Item 10",
+  "status": "SENT",
+  "created": "2014-10-01T07:00:00+02:00",
+  "permitCode": "99-1414-C",
+  "streetAddress": "Postintaival 3",
+  "locationProperty": "091-436-0013-0000 024",
+  "locationArea": "Vähä Huopalahti",
+  "lat":"60.226662",
+  "lng":"24.862650"
+},
+{
+  "id": 102,
+  "title": "Item 11",
+  "status": "SENT",
+  "created": "2014-10-01T07:00:00+02:00",
+  "permitCode": "99-8744-D",
+  "streetAddress": "Postintaival 3",
+  "locationProperty": "091-436-0013-0000 024",
+  "locationArea": "Vähä Huopalahti",
+  "lat":"60.226862",
+  "lng":"24.862850"
+},
+{
+  "id": 103,
+  "title": "Item 13",
+  "status": "SENT",
+  "created": "2014-10-01T07:00:00+02:00",
+  "permitCode": "98-4167-C",
+  "streetAddress": "Postintaival 3",
+  "locationProperty": "091-436-0013-0000 024",
+  "locationArea": "Vähä Huopalahti",
+  "lat":"60.229462",
+  "lng":"24.869650"
+},
+{
+  "id": 104,
+  "title": "Item 22",
+  "status": "SENT",
+  "created": "2014-10-01T07:00:00+02:00",
+  "permitCode": "91-5544-A",
+  "streetAddress": "Postintaival 3",
+  "locationProperty": "091-436-0013-0000 024",
+  "locationArea": "Vähä Huopalahti",
+  "lat":"60.227462",
+  "lng":"24.867650"
+},
+{
+  "id": 105,
+  "title": "Item 33",
+  "status": "SENT",
+  "created": "2014-10-01T07:00:00+02:00",
+  "permitCode": "99-5356-B",
+  "streetAddress": "Postintaival 3",
+  "locationProperty": "091-436-0013-0000 024",
+  "locationArea": "Vähä Huopalahti",
+  "lat":"60.229462",
+  "lng":"24.869650"
+}
+]
+}

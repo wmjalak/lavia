@@ -1,0 +1,98 @@
+
+
+<% 
+
+var currentMoment = moment(projectModel.get('startdate'), "YYYY-MM-DD");
+var endMoment = moment(projectModel.get('enddate'), "YYYY-MM-DD");
+endMoment.hours(23);
+var count = 0;
+var maxCount = 40;
+var events;
+%>
+
+<table class="ui-body ui-body-a dayplan-table small-text">
+<tr>
+<td style="width:50px;">&nbsp;</td>
+<td style="width:20%;">&nbsp;</td>
+<td style="width:20%;">&nbsp;</td>
+<td style="width:20%;">&nbsp;</td>
+<td style="width:20%;">&nbsp;</td>
+<td style="width:20%;">&nbsp;</td>
+
+</tr>
+
+<%
+do {
+%>
+
+    <tr><td colspan="6"><h3><%- currentMoment.format("dd L") %></h3></td></tr>
+
+    <%
+    var hour = 0;
+    var eventNames = [];
+    var id, type;
+    do {
+        currentMoment.hours(hour);
+    %>
+        <tr>
+
+        <% if (hour == 0 || hour == 6 || hour == 12 || hour == 18 ||
+            hour == 3 || hour == 9 || hour == 15 || hour == 21) { %>
+            <td><%- currentMoment.format("LT") %></td>
+        <% } else { %>
+            <td></td>
+        <% } %>
+        
+
+        <% events = collection.getEvents(currentMoment); %>
+
+        <% if (events != undefined) { %>
+
+            
+            <% for (var i = 0;i < 5;i++) { %>
+                
+                <% if (events[i] != undefined) { %>
+                    
+                    <%
+                    id = events[i].id;
+                    type = events[i].type;
+                    %>
+
+                    <%
+                        name = "";
+                        if (eventNames[id] == undefined) { 
+                            eventNames[id] = collection.get(id).get('title');
+                            name = eventNames[id];
+                        }
+                    %>
+
+                    <td class="poicell poicell-type-<%- type %>" data-id="<%- id %>" data-type="<%- type %>"><%= name %></td>
+                <% } else { %>
+                    <td></td>
+                <% } %>
+            <% } %>
+        
+        <% } %>
+        
+        </tr>
+    <%
+        hour++;
+    }
+    while (hour < 24);
+    %>
+
+
+
+<%
+currentMoment.add(1, 'days');
+count++;
+%>
+<%
+}
+while (currentMoment.isBefore(endMoment) || currentMoment.isSame(endMoment) && count < maxCount);
+%> 
+
+</table>
+
+
+

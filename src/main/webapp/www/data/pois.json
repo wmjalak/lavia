@@ -1,0 +1,15 @@
+{
+"items": [
+{
+  "id": 1,
+  "title": "Legoland Deutschland",
+  "created": "2014-10-08T07:00:00+02:00",
+  "streetAddress": "LEGOLAND ALLEE, 89312 Günzburg, Germany",
+  "country": "de",
+  "lat":"48.427364",
+  "lng":"10.296714",
+  "description": "LEGOLAND Deutschland is right between Stuttgart and Munich in Germany. You can reach LEGOLAND directly via the highway A8 between Munich and Stuttgart. Just exit at Guenzburg."
+}
+
+]
+}

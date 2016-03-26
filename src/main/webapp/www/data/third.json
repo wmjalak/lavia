@@ -1,0 +1,31 @@
+{
+"items": [
+{
+  "id": 0,
+  "title": "Asiakaskulut",
+  "status": "SENT",
+  "created": "2014-10-08T07:00:00+02:00",
+  "type": "expenseClaim",
+  "travelDistance": "50",
+  "expenceValue": "125"
+},
+{
+  "id": 1,
+  "title": "Asiakaskulut",
+  "status": "SENT",
+  "created": "2014-11-09T07:00:00+02:00",
+  "type": "expenseClaim",
+  "expenceValue": "100"
+},
+{
+  "id": 100,
+  "title": "Asiakaskäynti",
+  "status": "SENT",
+  "created": "2014-10-01T07:00:00+02:00",
+  "type": "travelExpence",
+  "expenceValue": "100",
+  "travelDistance":"85",
+  "travelDuration":"1h 20min"
+}
+]
+}
