@@ -1,0 +1,1 @@
+node src/main/javascript/r.js -o src/main/webapp/www/js/app.build.js
